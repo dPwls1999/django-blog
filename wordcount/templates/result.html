@@ -1,0 +1,26 @@
+
+<h1>RESULTS</h1>
+
+
+<h2>당신이 입력한 문자의 갯수는 총 {{total}}개 입니다!</h2>
+
+<h3>당신이 입력한 문장</h3> 
+
+<textarea name="" id="" cols="50" rows="20">
+{{text}}
+</textarea>
+<br>
+<br>
+<a href="{%url 'home' %}">HOME</a>
+
+<br>
+<h2>WORD COUNT</h2>
+
+<h4>가장 많이 나온 문자와 갯수는 {{word_max}} 입니다.</h4>
+
+{% for word, count in dictionary%}
+
+{{word}}:{{count}}
+<br>
+
+{% endfor %}
