@@ -1,14 +1,28 @@
 
-<h1>Detail page</h1>
+<span style = "font-family:'나눔스퀘어라운드OTF ExtraBold'; color:rgb(12, 12, 85);">
+    <h1>Detail Page</h1>
+</span>
+<br>
+<br>
 
+{%if blog.image%}
+    <img src="{{blog.image.url}}" alt="">
+    <!-- image = models.ImageField(upload_to="blog/", blank=True, null=True)  -->
+        <!-- media/blog/파일이름 -->
+{%endif%}
+
+<body bgcolor="#FFEAB5"></body>
+<span style = "font-family:'나눔스퀘어라운드OTF Bold';">
 <h3>제목:{{blog.title}}</h3>
-
+<br>
 <hr>
 
 <p>{{blog.pub_date}}</p>
 
 <p>{{blog.body}}</p>
-
+<br>
 <a href="{%url 'edit' blog.id%}">수정하기</a>
 <a href="{%url 'delete' blog.id%}">삭제하기</a>
-<a href="{%url 'list'%}">list</a>
+<a href="{%url 'home'%}">home</a>
+
+</span>

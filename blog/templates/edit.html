@@ -1,14 +1,28 @@
 
 
-
+<span style = "font-family:'나눔스퀘어라운드OTF ExtraBold'; color:rgb(12, 12, 85);">
 <h1>글 수정하기</h1>
-
+</span>
+<br>
+<br>
+{%if blog.image%}
+    <img src="{{blog.image.url}}" alt="">
+    <br>
+    <br>
+    <!-- image = models.ImageField(upload_to="blog/", blank=True, null=True)  -->
+        <!-- media/blog/파일이름 -->
+{%endif%}
+<body bgcolor="#FFEAB5"></body>
+<span style = "font-family:'나눔스퀘어라운드OTF Bold';">
 <form action="{%url 'update' blog.id %}" method="POST">
     {%csrf_token%}
-    제목:<input type="text" value = "{{blog.title}}" name="title">
+    Title : <input type="text" value = "{{blog.title}}" name="title">
     <br>
-    본문:<textarea name="body" id="" cols="30" rows="10">{{blog.body}}</textarea>
     <br>
-    <button type="submit">작성!</button>
+    Body : <textarea name="body" id="" cols="40" rows="20">{{blog.body}}</textarea>
+    <br>
+    <br>
+    <button type="submit">저장</button>
 
 </form>
+</span>

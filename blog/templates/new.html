@@ -1,13 +1,22 @@
 
+<span style = "font-family:'나눔스퀘어라운드OTF ExtraBold'; color:rgb(12, 12, 85);">
+<h1>노래 작성하기</h1>
+<h3>작성하고 싶은 노래를 적어주세요.</h3>
+</span>
+<br>
+<br>
+<br>
 
-<h1>새 글 작성하기</h1>
-
-<form action="{%url 'create'%}" method="POST">
+<body bgcolor="#FFEAB5"></body>
+<span style = "font-family:'나눔스퀘어라운드OTF Bold';">
+<form method="POST" enctype="multipart/form-data">
     {%csrf_token%}
-    제목:<input type="text" name="title">
+    <table>
+        {{form.as_table}}
+    </table>
     <br>
-    본문:<textarea name="body" id="" cols="30" rows="10"></textarea>
     <br>
-    <button type="submit">작성!</button>
-
+    <input class="btn btn-dark" type="submit" value="저장">
+    <a href="{%url 'home'%}">home</a>
 </form>
+</span>

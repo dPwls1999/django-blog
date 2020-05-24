@@ -1,0 +1,35 @@
+
+{%load static%}
+<span style = "font-family:'나눔스퀘어라운드OTF ExtraBold'; color:rgb(12, 12, 85);">
+<h1>MUSIC BLOG</h1>
+<h3>최신 노래 가사를 모아놓은 블로그</h3>
+</span>
+<br>
+<img src="{%static 'main.png'%}" alt="">
+<br>
+<br>
+
+<body bgcolor="#A4C3FF">
+
+<span style = "font-family:'나눔스퀘어라운드OTF Bold';">
+<a href="{%url 'new' %}"><h3>작성 GO!</h3></a>
+{% for blog in blogs%}
+<hr>
+
+    {{blog.title}}
+    <br>
+    {{blog.pub_date}}
+    <br>
+    {{blog.summary}}
+
+    <br>
+<a href="{%url 'detail' blog.id%}">더보기</a>
+<br>
+{%if blog.image%}
+    <img src="{{blog.image.url}}" alt="">
+    <!-- image = models.ImageField(upload_to="blog/", blank=True, null=True)  -->
+        <!-- media/blog/파일이름 -->
+{%endif%}
+
+{% endfor%}
+</span>
